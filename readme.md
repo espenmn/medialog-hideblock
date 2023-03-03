@@ -1,1 +1,1 @@
-This project was bootstrapped with [Create Guten Block](https://github.com/ahmadawais/create-guten-block).
+Lightweight Add-on for hiding / disabling (all) Gutenberg Blocks
