@@ -11,7 +11,7 @@
  * which makes it higher in priority.
  */
 
-.opacity20,
-.block-hidden-true  {
-	opacity: 0.2;
-}
+.block-hidden-true,
+.opacity20 {
+    opacity: 20
+ }

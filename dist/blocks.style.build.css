@@ -9,6 +9,7 @@
  *
  * CSS for both Frontend+Backend.
  */
+.opacity-20,
 .block-hidden-true  {
 	opacity: 0.2;
 }

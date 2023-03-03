@@ -28,10 +28,13 @@ function medialog_hideblock_assets() { // phpcs:ignore
 	// Register block editor styles for backend.
 	wp_register_style(
 		'medialog_hideblock-editor-css', // Handle.
-		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ), // Block editor CSS.
+		plugins_url( 'dist/block-editor-styles.css', dirname( __FILE__ ) ), // Block editor CSS.
 		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
+
+
+
 
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `medialogGlobal` object.
 	//wp_localize_script(
