@@ -28,11 +28,11 @@ const withInspectorControls = createHigherOrderComponent( ( BlockEdit ) => {
               						onChange={ () => {
               								setAttributes( { disableBlock: !attributes.disableBlock } );
                               //setAttributes( { className: "block-hidden-" + attributes.disableBlock  } );
-                              if (!attributes.disableBlock) {
-                                setAttributes( { className: "opacity20"  } );
-                              } else {
-                                setAttributes( { className: "opacity100"  } );
-                              }
+                              //if (!attributes.disableBlock) {
+                              //  setAttributes( { className: "opacity20 block-hidden-true" } );
+                              //} else {
+                              //  setAttributes( { className: "opacity100 block-hidden-false"  } );
+                              //}
               						} }
               						checked={ attributes.disableBlock }
               				/>
