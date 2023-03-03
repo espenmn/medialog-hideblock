@@ -21,25 +21,20 @@ const withInspectorControls = createHigherOrderComponent( ( BlockEdit ) => {
         const { attributes, setAttributes  } = props;
         return (
             <Fragment>
-              <InspectorControls>
-                <PanelBody
-    						  title="Disable block"
-						      initialOpen={false}
-    				     >
-    				       <PanelRow>
+              <InspectorControls __experimentalGroup="advanced">
+                 <PanelRow>
                       <ToggleControl
-              						label="Hide block"
+              						label="Disable / Hide block"
               						onChange={ () => {
               								setAttributes( { disableBlock: !attributes.disableBlock } );
-                              setAttributes( { className: "block-hidden-" + !attributes.disableBlock  } );
-                              if (!attributes.disableBlock) {
-                                setAttributes( { className: "opacity20"  } );
-                              }
+                              setAttributes( { className: "block-hidden-" + attributes.disableBlock  } );
+                              //if (!attributes.disableBlock) {
+                              //  setAttributes( { className: "opacity20"  } );
+                              //}
               						} }
               						checked={ attributes.disableBlock }
               				/>
       				      </PanelRow>
-                  </PanelBody>
                 </InspectorControls>
                 <BlockEdit { ...props  } />
             </Fragment>
@@ -52,8 +47,6 @@ wp.hooks.addFilter(
     'medialog/with-inspector-controls',
     withInspectorControls
 );
-
-
 
 function addDisabledAttribute(settings, name) {
 	if (typeof settings.attributes !== 'undefined') {

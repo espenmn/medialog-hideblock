@@ -10,7 +10,6 @@
  * CSS for just Backend enqueued after style.scss
  * which makes it higher in priority.
  */
-
 .block-hidden-true,
 .opacity20 {
     opacity: 20
