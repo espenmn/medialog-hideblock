@@ -33,9 +33,6 @@ function medialog_hideblock_assets() { // phpcs:ignore
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 
-
-
-
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `medialogGlobal` object.
 	//wp_localize_script(
 	//	'medialog_hideblock-js',
@@ -46,8 +43,6 @@ function medialog_hideblock_assets() { // phpcs:ignore
 	//		// Add more data here that you want to access from `medialogGlobal` object.
 	//	]
 	//);
-
-
 
 	register_block_type(
 		'medialog/block-medialog-hideblock', array(
@@ -73,6 +68,7 @@ add_action( 'init', 'medialog_hideblock_assets' );
 
 
 // Code to disable block from rendering if bool field 'disabled' is True
+// Overrides the default rendering
 function medialog_block_wrapper( $block_content, $block,  ) {
 	$myAttr = $block['attrs'];
 	$myKeys = array_keys($myAttr);
@@ -92,6 +88,8 @@ function medialog_block_wrapper( $block_content, $block,  ) {
 		//return content the normal way;
 		return $block_content;
 	}
+	// Hide block;
+	// Alternatively, we could show it only for admins
 	return '';
 }
 

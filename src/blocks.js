@@ -14,18 +14,11 @@
 const { createHigherOrderComponent } = wp.compose;
 const { Fragment } = wp.element;
 const { InspectorControls } = wp.blockEditor;
-
-
 const {  PanelBody, PanelRow,  ToggleControl  } = wp.components;
 
-
-
 const withInspectorControls = createHigherOrderComponent( ( BlockEdit ) => {
-
     return ( props ) => {
         const { attributes, setAttributes  } = props;
-        //props.className = "hidden-" + string({attributes.disableBlock});
-
         return (
             <Fragment>
               <InspectorControls>
