@@ -1,0 +1,14 @@
+{
+  "name": "medialog-disable-guten-block",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cgb-scripts --openssl-legacy-provider start",
+    "build": "cgb-scripts --openssl-legacy-provider build",
+    "eject": "cgb-scripts --openssl-legacy-provider eject"
+  },
+  "dependencies": {
+    "cgb-scripts": "1.23.1"
+  }
+}
+ 
