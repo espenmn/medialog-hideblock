@@ -15,7 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 function medialog_hideblock_assets() { // phpcs:ignore
-
 	// Register block editor script for backend.
 	wp_register_script(
 		'medialog_hideblock-js', // Handle.
@@ -69,20 +68,22 @@ add_action( 'init', 'medialog_hideblock_assets' );
 
 // Code to disable block from rendering if bool field 'disabled' is True
 // Overrides the default rendering
-function medialog_block_wrapper( $block_content, $block,  ) {
-	$myAttr = $block['attrs'];
-	$myKeys = array_keys($myAttr);
+function medialog_block_wrapper( $block_content, $block ) {
 	$disabled = false;
+	if (isset($block['attrs'])) {
+		$myAttr = $block['attrs'];
+		$myKeys = array_keys($myAttr);
 
-	// Hack around multidimentional array problem
-	foreach ($myKeys as $myKey) {
-		$myValue = $myAttr[$myKey];
-		if ($myKey == 'disableBlock' ){
-			if ($myAttr[$myKey] != false) {
-				$disabled = true;
+
+		// Hack around multidimentional array problem
+		foreach ($myKeys as $myKey) {
+			$myValue = $myAttr[$myKey];
+			if ($myKey == 'disableBlock' ){
+				if ($myAttr[$myKey] != false) {
+					$disabled = true;
+				}
 			}
-		}
-	}
+	}}
 
 	if (!$disabled){
 		//return content the normal way;
