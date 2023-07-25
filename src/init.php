@@ -69,29 +69,13 @@ add_action( 'init', 'medialog_hideblock_assets' );
 // Code to disable block from rendering if bool field 'disabled' is True
 // Overrides the default rendering
 function medialog_block_wrapper( $block_content, $block ) {
-	$disabled = false;
-	if (isset($block['attrs'])) {
-		$myAttr = $block['attrs'];
-		$myKeys = array_keys($myAttr);
-
-
-		// Hack around multidimentional array problem
-		foreach ($myKeys as $myKey) {
-			$myValue = $myAttr[$myKey];
-			if ($myKey == 'disableBlock' ){
-				if ($myAttr[$myKey] != false) {
-					$disabled = true;
-				}
-			}
-	}}
-
-	if (!$disabled){
-		//return content the normal way;
+	//$disabled = false;
+	if ( isset( $block['attrs']['disableBlock'] ) && $block['attrs']['disableBlock'] ) {
+		return '';
+	} else {
 		return $block_content;
 	}
-	// Hide block;
-	// Alternatively, we could show it only for admins
-	return '';
+
 }
 
 add_filter( 'render_block', 'medialog_block_wrapper', 10, 2 );
