@@ -32,25 +32,11 @@ function medialog_hideblock_assets() { // phpcs:ignore
 		null // filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	);
 
-	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `medialogGlobal` object.
-	//wp_localize_script(
-	//	'medialog_hideblock-js',
-	//	'medialogGlobal', // Array containing dynamic data for a JS Global.
-	//	[
-	//''		'pluginDirPath' => plugin_dir_path( __DIR__ ),
-	//		'pluginDirUrl'  => plugin_dir_url( __DIR__ ),
-	//		// Add more data here that you want to access from `medialogGlobal` object.
-	//	]
-	//);
 
 	register_block_type(
 		'medialog/block-medialog-hideblock', array(
-			// Enqueue blocks.style.build.css on both frontend & backend.
-			//'style'         => 'medialog_hideblock-style-css',
 			// Enqueue blocks.build.js in the editor only.
 			'editor_script' => 'medialog_hideblock-js',
-			// Enqueue blocks.editor.build.css in the editor only.
-			'editor_style'  => 'medialog_hideblock-editor-css',
 			'render_callback' => 'medialog_hideblock_render',
 			'attributes' => [
 					'disableBlock' => [
