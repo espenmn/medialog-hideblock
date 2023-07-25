@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Disable Gutenberg Block
  * Plugin URI: https://github.com/espenmn
- * Description: medialog-hideblock — is a Gutenberg plugin. It adds a setting to disable/hide any block
+ * Description: Adds an option/setting to disable/hide any block
  * Author: Espen Moe-Nilssen
  * Author URI: https://www.medialog.no
  * Version: 1.0.0
