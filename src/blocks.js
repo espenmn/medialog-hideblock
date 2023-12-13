@@ -18,7 +18,7 @@ const {  PanelBody, PanelRow,  ToggleControl  } = wp.components;
 
 const withInspectorControls = createHigherOrderComponent( ( BlockEdit ) => {
     return ( props ) => {
-        const { attributes, setAttributes  } = props;
+        const { attributes, setAttributes, className  } = props;
         return (
             <Fragment>
               <InspectorControls __experimentalGroup="advanced">
@@ -27,12 +27,7 @@ const withInspectorControls = createHigherOrderComponent( ( BlockEdit ) => {
               						label="Disable / Hide block"
               						onChange={ () => {
               								setAttributes( { disableBlock: !attributes.disableBlock } );
-                              //setAttributes( { className: "block-hidden-" + attributes.disableBlock  } );
-                              //if (!attributes.disableBlock) {
-                              //  setAttributes( { className: "opacity20 block-hidden-true" } );
-                              //} else {
-                              //  setAttributes( { className: "opacity100 block-hidden-false"  } );
-                              //}
+                              setAttributes( { className: "block-hidden-" + attributes.disableBlock  } );
               						} }
               						checked={ attributes.disableBlock }
               				/>
